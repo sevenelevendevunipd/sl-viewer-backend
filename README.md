@@ -11,7 +11,7 @@ Backend is based on the [Starlette Framework](https://www.starlette.io/) and on 
 
 ```sh
 poetry install  # needed only on first run and on lockfile changes
-poetry run uvicorn sl_viewer_backend:app  # ""production"" mode
+poetry run gunicorn -k uvicorn.workers.UvicornWorker sl_viewer_backend:app  # production mode
 poetry run python -m sl_viewer_backend  # dev mode, supports hot reload
 ```
 
