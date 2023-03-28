@@ -8,11 +8,10 @@ packages = [{include = "sl_viewer_backend"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-starlette = "^0.23.1"
-uvicorn = "^0.20.0"
-python-multipart = "^0.0.5"
+starlette = "^0.26.1"
+uvicorn = "^0.21.1"
+python-multipart = "^0.0.6"
 spectree = "^1.0.3"
-pydantic-computed = "^0.1.2"
 sl-parser = {git = "git@github.com:sevenelevendevunipd/sl-parser"}
 gunicorn = "^20.1.0"
 

@@ -21,7 +21,7 @@ async def analyze_log(request) -> Response:
         return JSONResponse(dict(LogParserError(errors=["Invalid log file"])), status_code=422)
     content = await log_file.read()
     try:
-        return Response(LogParserResponse(log=LogFile.parse_log(log_file.filename, content.decode('cp1252'))).json(), media_type="application/json")
+        return Response(LogParserResponse(log=LogFile.parse_log(log_file.filename or "<empty>", content.decode('cp1252'))).json(), media_type="application/json")
     except Exception as e:
         return JSONResponse(LogParserError(errors=[f"Log parsing error: {repr(e)[:64]}"]).dict(), status_code=422)
 
