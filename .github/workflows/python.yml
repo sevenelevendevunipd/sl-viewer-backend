@@ -18,7 +18,8 @@ jobs:
           install-dev-deps: true
       - name: Run pytest with coverage
         run: poetry run pytest
-      - name: Report coverage 
+      - name: Report coverage
+        if: github.event_name == 'pull_request'
         uses: orgoro/coverage@v3
         with:
           coverageFile: coverage.xml
