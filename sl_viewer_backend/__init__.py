@@ -16,13 +16,13 @@ spec = SpecTree("starlette")
 
 @spec.validate(
     form=LogUpload,
-    resp=SpectreeResponse(HTTP_200=LogParserResponse, HTTP_422=LogParserError),
+    resp=SpectreeResponse(HTTP_200=LogParserResponse, HTTP_400=LogParserError),
 )
 async def analyze_log(request: Request) -> Response:
     form = LogUpload(**(await request.form()))  # type: ignore
     log_file = form.log
     if not isinstance(log_file, UploadFile) or log_file.content_type not in {"text/csv", "application/vnd.ms-excel"}:
-        return JSONResponse(dict(LogParserError(errors=["Invalid log file"])), status_code=422)
+        return JSONResponse(dict(LogParserError(errors=["Invalid log file"])), status_code=400)
     content = await log_file.read()
     try:
         return Response(
@@ -32,7 +32,7 @@ async def analyze_log(request: Request) -> Response:
     except Exception as e:
         return JSONResponse(
             LogParserError(errors=[f"Log parsing error: {repr(e)[:64]}"]).dict(),
-            status_code=422,
+            status_code=400,
         )
 
 
