@@ -21,7 +21,7 @@ spec = SpecTree("starlette")
 async def analyze_log(request: Request) -> Response:
     form = LogUpload(**(await request.form()))  # type: ignore
     log_file = form.log
-    if not isinstance(log_file, UploadFile) or log_file.content_type != "text/csv":
+    if not isinstance(log_file, UploadFile) or log_file.content_type not in {"text/csv", "application/vnd.ms-excel"}:
         return JSONResponse(dict(LogParserError(errors=["Invalid log file"])), status_code=422)
     content = await log_file.read()
     try:
