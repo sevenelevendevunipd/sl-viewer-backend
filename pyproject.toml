@@ -12,8 +12,8 @@ starlette = "^0.26.1"
 uvicorn = "^0.21.1"
 python-multipart = "^0.0.6"
 spectree = "^1.0.3"
-sl-parser = {git = "https://github.com/sevenelevendevunipd/sl-parser.git"}
 gunicorn = "^20.1.0"
+sl-parser = "^0.2.0"
 
 
 [tool.poetry.group.dev.dependencies]
