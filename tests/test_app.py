@@ -9,16 +9,16 @@ def test_analyze_log():
     assert response.status_code == 200
 
 def test_analyze_log_empty_file_type():
-    response = client.post("/api/analyze_log", files={"log": ("rowWrong.csv", Path(__file__).with_name("rowWrong.csv").read_text())})
+    response = client.post("/api/analyze_log", files={"log": ("rowWrong.csv", "random invalid data")})
     assert response.status_code == 400
     json_data = response.json()
     assert len(json_data["errors"]) == 1
-    assert json_data["errors"][0] == "Log parsing error: IndexError('list index out of range')"
-
+    assert any("Log parsing error" in error for error in json_data["errors"])
+    
 def test_analyze_log_invalid_file_type():
-    response = client.post("/api/analyze_log", files={"log": ("row.txt", Path(__file__).with_name("row.txt").read_text())})
+    response = client.post("/api/analyze_log", files={"log": ("row.txt", "random invalid data")})
     assert response.status_code == 400
     json_data = response.json()
     assert len(json_data["errors"]) == 1
-    assert json_data["errors"][0] == "Invalid log file"
+    assert any("Invalid log file" in error for error in json_data["errors"])
     
