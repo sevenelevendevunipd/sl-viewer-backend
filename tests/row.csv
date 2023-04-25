@@ -1,0 +1,20 @@
+PC DateTime: 25.02.2022 14:23:21
+UPS DateTime: 25.02.2022 14:23:20
+INI File name :  unit_v2.ini; Unit=0 - SubUnit=0
+INI File name :  unit_v2.ini; Unit=1 - SubUnit=0
+INI File name :  module_v2.ini; Unit=1 - SubUnit=1
+INI File name :  module_v2.ini; Unit=1 - SubUnit=2
+INI File name :  module_v2.ini; Unit=1 - SubUnit=3
+INI File name :  bypass_v2.ini; Unit=1 - SubUnit=14
+Date ; Time ; Unit  ; SubUnit ; Code ; Description ; Value ; Type/UM ; Snapshot ; Color
+25/02/2022 ; 14:23:17.075 ; 1 ; 0 ; code ; code ; 0x0000 ; Hex ; 0 ; 0xFFADFF2F
+25/02/2022 ; 14:23:17.075 ; 1 ; 0 ; code ; ErrorIndex ; 112 ; [-] ; 0 ; 0xFFADFF2F
+25/02/2022 ; 14:23:17.075 ; 1 ; 0 ; code ; rrorCode ; _SysPermission ; [-] ; 0 ; 0xFFADFF2F
+25/02/2022 ; 14:23:12.375 ; 1 ; 0 ; code ; In Service mode ; OFF ; BIN ; 0 ; 0xFFE0FFFF
+25/02/2022 ; 14:23:12.275 ; 1 ; 0 ; code (Ethernet) ; [-] ; Service Mode OFF ; [-] ; 0 ; 0xFFADFF2F
+25/02/2022 ; 14:23:04.557 ; 1 ; 0 ; code ; In Service mode ; ON ; BIN ; 0 ; 0xFFE0FFFF
+25/02/2022 ; 14:23:04.457 ; 1 ; 0 ; code (Ethernet) ; [-] ; Service Mode On ; [-] ; 0 ; 0xFFADFF2F
+25/02/2022 ; 14:22:45.258 ; 1 ; 0 ; code ; In Service mode ; OFF ; BIN ; 0 ; 0xFFE0FFFF
+25/02/2022 ; 14:22:45.158 ; 1 ; 0 ; code (Ethernet) ; [-] ; Service Mode OFF ; [-] ; 0 ; 0xFFADFF2F
+25/02/2022 ; 14:22:40.558 ; 1 ; 0 ; code (Ethernet) ; [-] ; Maintenance Restart From Alert Limit ; [-] ; 0 ; 0xFFADFF2F
+25/02/2022 ; 14:22:22.259 ; 1 ; 0 ; code ; Reset History Log ; ON ; BIN ; 0 ; 0xFFD3D3D3
