@@ -36,6 +36,9 @@ target-version = ['py310']
 testpaths = ["tests"]
 addopts = "--cov=sl_viewer_backend --cov-report xml:coverage.xml --cov-report term-missing"
 
+[tool.coverage.run]
+omit = ["*/__main__.py"]
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
