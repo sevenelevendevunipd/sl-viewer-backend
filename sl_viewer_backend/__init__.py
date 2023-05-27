@@ -9,9 +9,7 @@ from .api import ApiMount  # noqa: E402
 
 app = Starlette(
     debug=True,
-    routes=[
-        ApiMount
-    ],
+    routes=[ApiMount],
     middleware=[Middleware(CORSMiddleware, allow_origins=["*"])],
 )
 

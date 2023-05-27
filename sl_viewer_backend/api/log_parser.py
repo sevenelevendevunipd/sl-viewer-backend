@@ -27,4 +27,5 @@ async def parse_log(request: Request) -> Response:
             status_code=400,
         )
 
+
 LogParserRoute = Route("/parse_log", parse_log, methods=["POST"])
